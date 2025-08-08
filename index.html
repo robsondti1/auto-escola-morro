@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Escola Morro de São Paulo - Sua Habilitação no Paraíso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tropical-blue': '#00B4DB',
+                        'ocean-deep': '#0083B0',
+                        'sunset-orange': '#FF6B35',
+                        'coral-pink': '#FF8E9B',
+                        'sand-gold': '#FFD700',
+                        'palm-green': '#2ECC71',
+                        'paradise-cyan': '#17A2B8'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'dancing': ['Dancing Script', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .beach-wave {
+            background: linear-gradient(-45deg, #00B4DB, #0083B0, #17A2B8, #FF6B35);
+            background-size: 400% 400%;
+            animation: waveAnimation 15s ease-in-out infinite;
+        }
+        
+        @keyframes waveAnimation {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 180, 219, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 180, 219, 0.2);
+        }
+        
+        .testimonial-slider {
+            scroll-behavior: smooth;
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #00B4DB, #FF6B35, transparent);
+            height: 2px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/5575982297820?text=Olá! Gostaria de informações sobre a Auto Escola Morro de São Paulo" 
+           target="_blank" 
+           class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-xl transition-all hover:scale-110 floating">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-40 glass-effect">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-tropical-blue to-sunset-orange rounded-full flex items-center justify-center">
+                        <i class="fas fa-car text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-ocean-deep">Auto Escola</h1>
+                        <p class="text-sm text-tropical-blue font-dancing">Morro de São Paulo</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8 text-ocean-deep font-medium">
+                    <li><a href="#home" class="nav-link hover:text-sunset-orange transition-colors">Início</a></li>
+                    <li><a href="#sobre" class="nav-link hover:text-sunset-orange transition-colors">Sobre</a></li>
+                    <li><a href="#servicos" class="nav-link hover:text-sunset-orange transition-colors">Serviços</a></li>
+                    <li><a href="#galeria" class="nav-link hover:text-sunset-orange transition-colors">Galeria</a></li>
+                    <li><a href="#matricula" class="nav-link hover:text-sunset-orange transition-colors">Matrícula</a></li>
+                    <li><a href="#contato" class="nav-link hover:text-sunset-orange transition-colors">Contato</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-ocean-deep" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <ul class="space-y-3 text-ocean-deep">
+                    <li><a href="#home" class="nav-link block py-2 hover:text-sunset-orange">Início</a></li>
+                    <li><a href="#sobre" class="nav-link block py-2 hover:text-sunset-orange">Sobre</a></li>
+                    <li><a href="#servicos" class="nav-link block py-2 hover:text-sunset-orange">Serviços</a></li>
+                    <li><a href="#galeria" class="nav-link block py-2 hover:text-sunset-orange">Galeria</a></li>
+                    <li><a href="#matricula" class="nav-link block py-2 hover:text-sunset-orange">Matrícula</a></li>
+                    <li><a href="#contato" class="nav-link block py-2 hover:text-sunset-orange">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-6">
+        <!-- Home Section -->
+        <section id="home" class="page-section min-h-screen">
+            <!-- Hero Banner -->
+            <div class="relative h-screen beach-wave flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                
+                <!-- Tropical Background -->
+                <div class="absolute inset-0" style="background-image: url('keys/morro-sao-paulo-beach?prompt=Beautiful%20aerial%20view%20of%20Morro%20de%20São%20Paulo%20beach%20with%20crystal%20clear%20turquoise%20water%2C%20white%20sand%2C%20palm%20trees%2C%20boats%2C%20paradise%20tropical%20island%20Bahia%20Brazil'); background-size: cover; background-position: center; opacity: 0.4;"></div>
+                
+                <div class="relative z-20 text-center text-white px-4 max-w-6xl fade-in">
+                    <h1 class="text-4xl md:text-7xl font-bold mb-6">
+                        Sua <span class="text-sand-gold font-dancing">Habilitação</span> com
+                    </h1>
+                    <h2 class="text-5xl md:text-8xl font-dancing text-sunset-orange mb-8">
+                        Tradição
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                        Mais de 15 anos formando condutores em Valença-BA. Parcele em até 10x sem juros no cartão.
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                        <a href="#matricula" class="bg-gradient-to-r from-sunset-orange to-coral-pink text-white px-10 py-4 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-2xl">
+                            Faça Sua Matrícula
+                        </a>
+                        <a href="#servicos" class="border-2 border-white text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-white hover:text-ocean-deep transition-all">
+                            Conheça os Serviços
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </div>
+            </div>
+
+            <!-- Por que escolher nossa escola -->
+            <div class="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">
+                            Por que escolher nossa escola?
+                        </h2>
+                        <div class="section-divider w-24 mx-auto mb-6"></div>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            A única auto escola em Morro de São Paulo com experiência e paixão pelo que faz
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div class="card-hover text-center p-8 bg-white rounded-3xl shadow-lg">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-tropical-blue to-paradise-cyan rounded-full flex items-center justify-center shadow-xl">
+                                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-ocean-deep">Localização Central</h3>
+                            <p class="text-gray-600 leading-relaxed">Localizada no centro de Valença-BA, fácil acesso e estacionamento</p>
+                        </div>
+
+                        <div class="card-hover text-center p-8 bg-white rounded-3xl shadow-lg">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-sunset-orange to-coral-pink rounded-full flex items-center justify-center shadow-xl">
+                                <i class="fas fa-user-tie text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-ocean-deep">Instrutores Experientes</h3>
+                            <p class="text-gray-600 leading-relaxed">Profissionais qualificados com mais de 15 anos de experiência</p>
+                        </div>
+
+                        <div class="card-hover text-center p-8 bg-white rounded-3xl shadow-lg">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-palm-green to-tropical-blue rounded-full flex items-center justify-center shadow-xl">
+                                <i class="fas fa-star text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-ocean-deep">Facilidade de Pagamento</h3>
+                            <p class="text-gray-600 leading-relaxed">Parcele sua habilitação em até 10x sem juros no cartão e crediário</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials -->
+                    <div class="relative">
+                        <h3 class="text-3xl font-bold text-center mb-12 text-ocean-deep">O que nossos alunos dizem</h3>
+                        <div class="testimonials-wrapper relative overflow-hidden bg-white rounded-3xl p-8 shadow-xl min-h-80">
+                            <div class="testimonials-track flex transition-transform duration-500 ease-in-out" id="testimonials-track">
+                                <!-- Testimonial 1 -->
+                                <div class="testimonial-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl shadow-md h-64 flex flex-col justify-between border border-gray-200">
+                                        <div>
+                                            <div class="flex items-center mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-tropical-blue to-sunset-orange rounded-full flex items-center justify-center mr-4">
+                                                    <i class="fas fa-user text-white text-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-ocean-deep">Marina Santos</h4>
+                                                    <div class="text-sand-gold">
+                                                        ⭐⭐⭐⭐⭐
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="italic text-gray-700">"Experiência incrível! Aprender a dirigir em Morro de São Paulo foi um sonho realizado. Os instrutores são muito pacientes!"</p>
+                                        </div>
+                                        <div class="text-sm text-gray-500">Turista • São Paulo</div>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial 2 -->
+                                <div class="testimonial-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl shadow-md h-64 flex flex-col justify-between border border-gray-200">
+                                        <div>
+                                            <div class="flex items-center mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-palm-green to-tropical-blue rounded-full flex items-center justify-center mr-4">
+                                                    <i class="fas fa-user text-white text-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-ocean-deep">João da Ilha</h4>
+                                                    <div class="text-sand-gold">
+                                                        ⭐⭐⭐⭐⭐
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="italic text-gray-700">"Sendo morador local, conhecia bem as ruas, mas a escola me ensinou a dirigir com segurança e responsabilidade!"</p>
+                                        </div>
+                                        <div class="text-sm text-gray-500">Morador Local</div>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial 3 -->
+                                <div class="testimonial-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl shadow-md h-64 flex flex-col justify-between border border-gray-200">
+                                        <div>
+                                            <div class="flex items-center mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center mr-4">
+                                                    <i class="fas fa-user text-white text-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-ocean-deep">Ana Clara</h4>
+                                                    <div class="text-sand-gold">
+                                                        ⭐⭐⭐⭐⭐
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="italic text-gray-700">"Que experiência única! Fazer autoescola num paraíso desses. Recomendo para quem quer algo especial!"</p>
+                                        </div>
+                                        <div class="text-sm text-gray-500">Pousadeira • Morro</div>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial 4 -->
+                                <div class="testimonial-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl shadow-md h-64 flex flex-col justify-between border border-gray-200">
+                                        <div>
+                                            <div class="flex items-center mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-palm-green to-tropical-blue rounded-full flex items-center justify-center mr-4">
+                                                    <i class="fas fa-user text-white text-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-ocean-deep">Carlos Pescador</h4>
+                                                    <div class="text-sand-gold">
+                                                        ⭐⭐⭐⭐⭐
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="italic text-gray-700">"Trabalho com turismo aqui na ilha. Ter carteira foi essencial para meu trabalho. Obrigado pela paciência!"</p>
+                                        </div>
+                                        <div class="text-sm text-gray-500">Guia de Turismo</div>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial 5 -->
+                                <div class="testimonial-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl shadow-md h-64 flex flex-col justify-between border border-gray-200">
+                                        <div>
+                                            <div class="flex items-center mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-tropical-blue to-paradise-cyan rounded-full flex items-center justify-center mr-4">
+                                                    <i class="fas fa-user text-white text-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-ocean-deep">Fernanda Turista</h4>
+                                                    <div class="text-sand-gold">
+                                                        ⭐⭐⭐⭐⭐
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="italic text-gray-700">"Vim de Salvador e aproveitei minha estadia para tirar a carteira. Que ideia genial! Uma experiência inesquecível."</p>
+                                        </div>
+                                        <div class="text-sm text-gray-500">Turista • Salvador</div>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial 6 -->
+                                <div class="testimonial-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl shadow-md h-64 flex flex-col justify-between border border-gray-200">
+                                        <div>
+                                            <div class="flex items-center mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center mr-4">
+                                                    <i class="fas fa-user text-white text-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-ocean-deep">Ricardo Moreira</h4>
+                                                    <div class="text-sand-gold">
+                                                        ⭐⭐⭐⭐⭐
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="italic text-gray-700">"Funcionário da pousada que conseguiu a carteira aqui. Agora posso buscar os hóspedes no catamarã!"</p>
+                                        </div>
+                                        <div class="text-sm text-gray-500">Funcionário de Pousada</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <button class="testimonials-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-ocean-deep hover:bg-tropical-blue text-white p-3 rounded-full shadow-lg transition-all z-10">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="testimonials-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-ocean-deep hover:bg-tropical-blue text-white p-3 rounded-full shadow-lg transition-all z-10">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre" class="page-section hidden">
+            <div class="py-20 bg-white mt-6">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">Nossa História</h2>
+                        <div class="section-divider w-24 mx-auto mb-6"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div class="fade-in">
+                            <h3 class="text-3xl font-bold mb-6 text-ocean-deep">Pioneiros em Morro de São Paulo</h3>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                Há mais de 15 anos formando condutores responsáveis em Valença-BA. Nossa missão é oferecer formação de qualidade com tradição e confiança que só a experiência pode proporcionar.
+                            </p>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                Com instrutores experientes e uma metodologia comprovada, garantimos que cada aluno aprenda não apenas a dirigir, mas a fazê-lo com segurança e responsabilidade no trânsito.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4 mt-8">
+                                <div class="text-center p-4 bg-gradient-to-br from-tropical-blue to-paradise-cyan text-white rounded-xl">
+                                    <div class="text-2xl font-bold">1000+</div>
+                                    <div class="text-sm">Alunos Formados</div>
+                                </div>
+                                <div class="text-center p-4 bg-gradient-to-br from-sunset-orange to-coral-pink text-white rounded-xl">
+                                    <div class="text-2xl font-bold">15+</div>
+                                    <div class="text-sm">Anos de Experiência</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <img src="keys/morro-auto-escola?prompt=Driving%20lesson%20in%20Morro%20de%20São%20Paulo%20with%20instructor%20and%20student%20in%20car%2C%20beautiful%20beach%20and%20palm%20trees%20in%20background%2C%20tropical%20paradise%20setting" 
+                                 alt="Auto Escola Morro" 
+                                 class="w-full rounded-3xl shadow-2xl">
+                            <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-palm-green to-tropical-blue text-white p-6 rounded-2xl shadow-xl">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold">98%</div>
+                                    <div class="text-sm">Taxa de Aprovação</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Valores -->
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-tropical-blue to-paradise-cyan rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-ocean-deep">Paixão</h3>
+                            <p class="text-gray-600">Amor pelo que fazemos e pelo paraíso em que vivemos</p>
+                        </div>
+
+                        <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-ocean-deep">Segurança</h3>
+                            <p class="text-gray-600">Prioritamos sempre a segurança de nossos alunos</p>
+                        </div>
+
+                        <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-palm-green to-tropical-blue rounded-full flex items-center justify-center">
+                                <i class="fas fa-leaf text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-ocean-deep">Sustentabilidade</h3>
+                            <p class="text-gray-600">Respeito e preservação do meio ambiente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Section -->
+        <section id="servicos" class="page-section hidden">
+            <div class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 mt-6">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">Nossos Serviços</h2>
+                        <div class="section-divider w-24 mx-auto mb-6"></div>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Serviços completos de habilitação no paraíso
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+                            <div class="w-16 h-16 mb-6 bg-gradient-to-r from-tropical-blue to-paradise-cyan rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-id-card text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-ocean-deep">Primeira Habilitação</h3>
+                            <p class="text-gray-600 mb-6">CNH categoria A, B ou AB com aulas teóricas e práticas</p>
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>• Aulas teóricas presenciais</li>
+                                <li>• Aulas práticas personalizadas</li>
+                                <li>• Material didático incluído</li>
+                                <li>• Suporte até aprovação</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+                            <div class="w-16 h-16 mb-6 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-sync-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-ocean-deep">Renovação de CNH</h3>
+                            <p class="text-gray-600 mb-6">Renovação rápida e sem complicações</p>
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>• Exames médicos locais</li>
+                                <li>• Teste psicotécnico</li>
+                                <li>• Processo agilizado</li>
+                                <li>• Documentação completa</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+                            <div class="w-16 h-16 mb-6 bg-gradient-to-r from-palm-green to-tropical-blue rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-plus text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-ocean-deep">Adição de Categoria</h3>
+                            <p class="text-gray-600 mb-6">Amplie sua habilitação com novas categorias</p>
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>• Categoria A para B</li>
+                                <li>• Categoria B para A</li>
+                                <li>• Aulas específicas</li>
+                                <li>• Veículos adequados</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+                            <div class="w-16 h-16 mb-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-redo text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-ocean-deep">Reciclagem</h3>
+                            <p class="text-gray-600 mb-6">Recupere seu direito de dirigir</p>
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>• 30 horas de curso</li>
+                                <li>• Horários flexíveis</li>
+                                <li>• Ambiente paradisíaco</li>
+                                <li>• Instrutores especializados</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+                            <div class="w-16 h-16 mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-laptop text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-ocean-deep">Simulados Online</h3>
+                            <p class="text-gray-600 mb-6">Prepare-se com nossa plataforma digital</p>
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>• Acesso 24/7</li>
+                                <li>• Questões atualizadas</li>
+                                <li>• Relatórios de desempenho</li>
+                                <li>• Suporte online</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+                            <div class="w-16 h-16 mb-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-car-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-ocean-deep">Aulas Especiais</h3>
+                            <p class="text-gray-600 mb-6">Experiência única de aprendizado</p>
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>• Direção na praia</li>
+                                <li>• Estacionamento em ferry</li>
+                                <li>• Trânsito de ilha</li>
+                                <li>• Condução ecológica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-16">
+                        <a href="#matricula" class="bg-gradient-to-r from-sunset-orange to-coral-pink text-white px-8 py-4 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-xl">
+                            Solicite um Orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria Section -->
+        <section id="galeria" class="page-section hidden">
+            <div class="py-20 bg-white mt-6">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">Galeria</h2>
+                        <div class="section-divider w-24 mx-auto mb-6"></div>
+                        <p class="text-xl text-gray-600">Veja como é aprender a dirigir no paraíso</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Galeria de imagens -->
+                        <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all group">
+                            <img src="keys/morro-aula-pratica?prompt=Driving%20lesson%20on%20beautiful%20beach%20road%20in%20Morro%20de%20São%20Paulo%2C%20instructor%20and%20student%20in%20modern%20car%2C%20palm%20trees%20and%20ocean%20view" 
+                                 alt="Aula Prática na Praia" 
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-bold text-lg">Aulas Práticas na Praia</h3>
+                                    <p class="text-sm">Experiência única de dirigir na areia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all group">
+                            <img src="keys/morro-sala-aula?prompt=Modern%20classroom%20in%20tropical%20setting%20Morro%20de%20São%20Paulo%2C%20students%20learning%20traffic%20rules%2C%20bright%20airy%20space%20with%20ocean%20view" 
+                                 alt="Sala de Aula" 
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-bold text-lg">Sala de Aula</h3>
+                                    <p class="text-sm">Ambiente arejado com vista para o mar</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all group">
+                            <img src="keys/morro-veiculos?prompt=Driving%20school%20cars%20parked%20on%20beautiful%20beach%20setting%20Morro%20de%20São%20Paulo%2C%20modern%20vehicles%20with%20dual%20controls%2C%20tropical%20background" 
+                                 alt="Frota de Veículos" 
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-bold text-lg">Nossa Frota</h3>
+                                    <p class="text-sm">Veículos modernos e seguros</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all group">
+                            <img src="keys/morro-ferry-aula?prompt=Driving%20lesson%20boarding%20ferry%20boat%20in%20Morro%20de%20São%20Paulo%2C%20car%20entering%20ferry%2C%20unique%20island%20driving%20experience" 
+                                 alt="Aula no Ferry" 
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-bold text-lg">Embarque no Ferry</h3>
+                                    <p class="text-sm">Experiência única de ilha</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all group">
+                            <img src="keys/morro-formatura?prompt=Graduation%20ceremony%20Auto%20Escola%20Morro%20de%20São%20Paulo%2C%20happy%20students%20with%20certificates%2C%20beach%20background%2C%20celebration" 
+                                 alt="Formatura" 
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-bold text-lg">Formatura dos Alunos</h3>
+                                    <p class="text-sm">Celebrando conquistas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all group">
+                            <img src="keys/morro-por-do-sol?prompt=Driving%20lesson%20during%20beautiful%20sunset%20in%20Morro%20de%20São%20Paulo%2C%20car%20silhouette%20against%20golden%20sky%2C%20romantic%20tropical%20scene" 
+                                 alt="Aula no Pôr do Sol" 
+                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-bold text-lg">Aula no Pôr do Sol</h3>
+                                    <p class="text-sm">Momentos únicos de aprendizado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Matrícula Section -->
+        <section id="matricula" class="page-section hidden">
+            <div class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 mt-6">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2 class="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">Faça Sua Matrícula</h2>
+                            <div class="section-divider w-24 mx-auto mb-6"></div>
+                            <p class="text-xl text-gray-600">Comece sua jornada com segurança</p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <!-- Formulário -->
+                            <div class="bg-white p-8 rounded-3xl shadow-xl">
+                                <h3 class="text-2xl font-bold mb-6 text-ocean-deep">Dados para Matrícula</h3>
+                                
+                                <form id="matricula-form" class="space-y-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Nome Completo *</label>
+                                        <input type="text" id="nome" required 
+                                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tropical-blue focus:border-transparent">
+                                    </div>
+
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">CPF *</label>
+                                            <input type="text" id="cpf" required 
+                                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tropical-blue focus:border-transparent" 
+                                                   placeholder="000.000.000-00">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">WhatsApp *</label>
+                                            <input type="tel" id="telefone" required 
+                                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tropical-blue focus:border-transparent" 
+                                                   placeholder="(75) 98229-7820">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                                        <input type="email" id="email" 
+                                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tropical-blue focus:border-transparent">
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Categoria Desejada *</label>
+                                        <select id="categoria" required 
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tropical-blue focus:border-transparent">
+                                            <option value="">Selecione a categoria</option>
+                                            <option value="A">Categoria A (Moto)</option>
+                                            <option value="B">Categoria B (Carro)</option>
+                                            <option value="AB">Categoria AB (Carro + Moto)</option>
+                                            <option value="renovacao">Renovação de CNH</option>
+                                            <option value="adicao">Adição de Categoria</option>
+                                            <option value="reciclagem">Reciclagem</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Como soube de nós?</label>
+                                        <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tropical-blue focus:border-transparent">
+                                            <option value="indicacao">Indicação de amigos</option>
+                                            <option value="internet">Pesquisa na internet</option>
+                                            <option value="instagram">Instagram (@autoescolamorro)</option>
+                                            <option value="redes-sociais">Outras redes sociais</option>
+                                            <option value="anuncio">Viu nosso anúncio</option>
+                                            <option value="outros">Outros</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Observações</label>
+                                        <textarea rows="3" 
+                                                  class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tropical-blue focus:border-transparent resize-none" 
+                                                  placeholder="Conte-nos sobre sua experiência com direção, expectativas..."></textarea>
+                                    </div>
+
+                                    <button type="submit" 
+                                            class="w-full bg-gradient-to-r from-sunset-orange to-coral-pink text-white py-4 rounded-xl text-xl font-bold hover:scale-105 transition-all shadow-2xl">
+                                        Enviar Matrícula
+                                    </button>
+                                </form>
+
+                                <!-- Success Message -->
+                                <div id="success-message" class="hidden mt-6 p-4 bg-palm-green bg-opacity-90 border border-green-400 text-white rounded-xl">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    <strong>Matrícula enviada!</strong> Em breve entraremos em contato pelo WhatsApp.
+                                </div>
+                            </div>
+
+                            <!-- Informações -->
+                            <div class="space-y-6">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                    <h4 class="text-xl font-bold mb-4 text-ocean-deep">
+                                        <i class="fas fa-gift mr-2 text-sunset-orange"></i>
+                                        Vantagens Exclusivas
+                                    </h4>
+                                    <ul class="space-y-3 text-gray-600">
+                                        <li><i class="fas fa-check text-sunset-orange mr-2"></i>Mais de 15 anos no mercado</li>
+                                        <li><i class="fas fa-check text-sunset-orange mr-2"></i>Parcelamento em até 10x sem juros</li>
+                                        <li><i class="fas fa-check text-sunset-orange mr-2"></i>Instrutores experientes</li>
+                                        <li><i class="fas fa-check text-sunset-orange mr-2"></i>Localização central em Valença</li>
+                                        <li><i class="fas fa-check text-sunset-orange mr-2"></i>Atendimento personalizado</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                    <h4 class="text-xl font-bold mb-4 text-ocean-deep">
+                                        <i class="fas fa-route mr-2 text-sunset-orange"></i>
+                                        Processo Simples
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center text-gray-600">
+                                            <div class="w-8 h-8 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm">1</div>
+                                            <span>Preencha o formulário</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-600">
+                                            <div class="w-8 h-8 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm">2</div>
+                                            <span>Receba contato no WhatsApp</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-600">
+                                            <div class="w-8 h-8 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm">3</div>
+                                            <span>Finalize documentação</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-600">
+                                            <div class="w-8 h-8 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm">4</div>
+                                            <span>Comece suas aulas!</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center bg-white p-6 rounded-2xl shadow-lg">
+                                    <p class="text-gray-600 mb-4">Prefere falar diretamente?</p>
+                                    <a href="https://wa.me/5575982297820?text=Olá! Gostaria de fazer minha matrícula na Auto Escola Morro de São Paulo" 
+                                       target="_blank"
+                                       class="bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition-colors inline-flex items-center font-bold shadow-xl">
+                                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                                        Falar no WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="page-section hidden">
+            <div class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 mt-6">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-ocean-deep mb-4">Entre em Contato</h2>
+                        <div class="section-divider w-24 mx-auto mb-6"></div>
+                        <p class="text-xl text-gray-600">Estamos aqui para ajudar você</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                        <!-- Informações de Contato -->
+                        <div class="space-y-8">
+                            <div class="card-hover bg-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 text-ocean-deep flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-3 text-sunset-orange"></i>
+                                    Localização
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    Rua Marechal Deodoro, 217<br>
+                                    Centro - Valença/BA<br>
+                                    CEP: 45400-000
+                                </p>
+                                <div class="w-full h-48 bg-gray-200 rounded-xl overflow-hidden">
+                                    <div class="w-full h-full bg-gradient-to-br from-tropical-blue to-sunset-orange flex items-center justify-center text-white text-lg font-bold">
+                                        📍 Morro de São Paulo
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-hover bg-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 text-ocean-deep flex items-center">
+                                    <i class="fas fa-phone mr-3 text-sunset-orange"></i>
+                                    Contatos
+                                </h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-semibold text-gray-800">WhatsApp Principal:</p>
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-gray-600">(75) 99999-9999</p>
+                                            <a href="https://wa.me/5575999999999" 
+                                               target="_blank" 
+                                               class="bg-green-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-green-600 transition-colors">
+                                                <i class="fab fa-whatsapp mr-1"></i>
+                                                Chamar
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">E-mail:</p>
+                                        <p class="text-gray-600">contato@autoescolamorro.com.br</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-hover bg-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 text-ocean-deep flex items-center">
+                                    <i class="fas fa-clock mr-3 text-sunset-orange"></i>
+                                    Funcionamento
+                                </h3>
+                                <div class="space-y-2 text-gray-600">
+                                    <p><strong>Segunda a Sexta:</strong> 8h às 17h</p>
+                                    <p><strong>Sábado:</strong> 8h às 12h</p>
+                                    <p><strong>Domingo e Feriados:</strong> Fechado</p>
+                                    <p class="text-sm text-sunset-orange mt-3">
+                                        <i class="fas fa-info-circle mr-1"></i>
+                                        Horários especiais para turistas
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Redes Sociais e Informações -->
+                        <div class="space-y-8">
+                            <div class="card-hover bg-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 text-ocean-deep flex items-center">
+                                    <i class="fas fa-share-alt mr-3 text-sunset-orange"></i>
+                                    Redes Sociais
+                                </h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <a href="#" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-all">
+                                        <i class="fab fa-facebook-f text-2xl mb-2"></i>
+                                        <div class="text-sm font-bold">Facebook</div>
+                                    </a>
+                                    <a href="#" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-all">
+                                        <i class="fab fa-instagram text-2xl mb-2"></i>
+                                        <div class="text-sm font-bold">Instagram</div>
+                                    </a>
+                                    <a href="https://wa.me/5575999999999" target="_blank" class="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-all">
+                                        <i class="fab fa-whatsapp text-2xl mb-2"></i>
+                                        <div class="text-sm font-bold">WhatsApp</div>
+                                    </a>
+                                    <a href="#" class="bg-gradient-to-r from-red-500 to-red-600 text-white p-4 rounded-xl text-center hover:scale-105 transition-all">
+                                        <i class="fab fa-youtube text-2xl mb-2"></i>
+                                        <div class="text-sm font-bold">YouTube</div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="card-hover bg-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 text-ocean-deep flex items-center">
+                                    <i class="fas fa-info-circle mr-3 text-sunset-orange"></i>
+                                    Informações Importantes
+                                </h3>
+                                <div class="space-y-4 text-gray-600">
+                                    <div class="p-3 bg-blue-50 rounded-lg">
+                                        <p class="font-semibold text-ocean-deep">Para Turistas:</p>
+                                        <p class="text-sm">Oferecemos horários especiais e pacotes para visitantes da ilha</p>
+                                    </div>
+                                    <div class="p-3 bg-green-50 rounded-lg">
+                                        <p class="font-semibold text-ocean-deep">Documentos:</p>
+                                        <p class="text-sm">RG, CPF, comprovante de residência e foto 3x4</p>
+                                    </div>
+                                    <div class="p-3 bg-yellow-50 rounded-lg">
+                                        <p class="font-semibold text-ocean-deep">Pagamento:</p>
+                                        <p class="text-sm">À vista ou parcelado. Aceitamos PIX, cartão e dinheiro</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-hover bg-gradient-to-r from-sunset-orange to-coral-pink text-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 flex items-center">
+                                    <i class="fas fa-calendar-check mr-3"></i>
+                                    Agende uma Visita
+                                </h3>
+                                <p class="mb-4">Venha conhecer nossa estrutura em Valença-BA!</p>
+                                <a href="https://wa.me/5575982297820?text=Gostaria de agendar uma visita à Auto Escola Morro de São Paulo" 
+                                   target="_blank"
+                                   class="bg-white text-sunset-orange px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors inline-block">
+                                    Agendar Visita
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-deep text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-sunset-orange to-coral-pink rounded-full flex items-center justify-center">
+                            <i class="fas fa-car text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Auto Escola Morro de São Paulo</h3>
+                            <p class="text-gray-300 font-dancing">Sua habilitação no paraíso</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Auto Escola Morro de São Paulo em Valença-BA. Há mais de 15 anos oferecendo formação de qualidade com tradição, segurança e facilidade de pagamento em até 10x sem juros.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-sand-gold text-2xl transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-sand-gold text-2xl transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5575982297820" target="_blank" class="text-gray-300 hover:text-sand-gold text-2xl transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-sand-gold text-2xl transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="nav-link text-gray-300 hover:text-sand-gold transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="nav-link text-gray-300 hover:text-sand-gold transition-colors">Sobre</a></li>
+                        <li><a href="#servicos" class="nav-link text-gray-300 hover:text-sand-gold transition-colors">Serviços</a></li>
+                        <li><a href="#galeria" class="nav-link text-gray-300 hover:text-sand-gold transition-colors">Galeria</a></li>
+                        <li><a href="#matricula" class="nav-link text-gray-300 hover:text-sand-gold transition-colors">Matrícula</a></li>
+                        <li><a href="#contato" class="nav-link text-gray-300 hover:text-sand-gold transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contato</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fas fa-map-marker-alt mr-2 text-sunset-orange"></i>Rua Marechal Deodoro, 217 - Centro, Valença/BA</li>
+                        <li><i class="fab fa-whatsapp mr-2 text-sunset-orange"></i>(75) 98229-7820</li>
+                        <li><i class="fas fa-envelope mr-2 text-sunset-orange"></i>contato@autoescolamorro.com.br</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-300">© 2024 Auto Escola Morro de São Paulo. Todos os direitos reservados.</p>
+                <p class="text-gray-400 text-sm mt-2">Instagram: @autoescolamorro | WhatsApp: (75) 98229-7820</p>
+                <p class="text-gray-400 text-sm mt-2">Mais de 15 anos formando condutores em Valença-BA | Parcelamos em até 10x sem juros</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navegação SPA
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.page-section');
+
+        function showSection(targetId) {
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+
+            window.location.hash = targetId;
+            mobileMenu.classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                showSection(targetId);
+            });
+        });
+
+        function handleInitialLoad() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        }
+
+        window.addEventListener('popstate', handleInitialLoad);
+        handleInitialLoad();
+
+        // Formulário de Matrícula
+        const form = document.getElementById('matricula-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const cpf = document.getElementById('cpf').value;
+            const telefone = document.getElementById('telefone').value;
+            const categoria = document.getElementById('categoria').value;
+            
+            if (!nome || !cpf || !telefone || !categoria) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            form.style.display = 'none';
+            successMessage.classList.remove('hidden');
+            
+            setTimeout(() => {
+                form.reset();
+                form.style.display = 'block';
+                successMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Máscaras
+        const cpfInput = document.getElementById('cpf');
+        cpfInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+                e.target.value = value;
+            }
+        });
+
+        const phoneInput = document.getElementById('telefone');
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                if (value.length <= 10) {
+                    value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+                } else {
+                    value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+                }
+                e.target.value = value;
+            }
+        });
+
+        // Carrossel de Depoimentos
+        let currentTestimonial = 0;
+        const testimonialsTrack = document.getElementById('testimonials-track');
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        
+        function moveTestimonials() {
+            if (testimonialSlides.length === 0) return;
+            
+            const isMobile = window.innerWidth < 768;
+            const slideWidth = isMobile ? 100 : 33.333; // 100% para mobile, ~33% para desktop
+            const maxSlides = isMobile ? testimonialSlides.length - 1 : Math.max(0, testimonialSlides.length - 3);
+            
+            // Garante que não ultrapasse os limites
+            if (currentTestimonial > maxSlides) {
+                currentTestimonial = 0;
+            }
+            
+            const translateX = -(currentTestimonial * slideWidth);
+            testimonialsTrack.style.transform = `translateX(${translateX}%)`;
+        }
+
+        if (testimonialSlides.length > 0) {
+            document.querySelector('.testimonials-next').addEventListener('click', () => {
+                const isMobile = window.innerWidth < 768;
+                const maxSlides = isMobile ? testimonialSlides.length - 1 : Math.max(0, testimonialSlides.length - 3);
+                currentTestimonial = currentTestimonial >= maxSlides ? 0 : currentTestimonial + 1;
+                moveTestimonials();
+            });
+
+            document.querySelector('.testimonials-prev').addEventListener('click', () => {
+                const isMobile = window.innerWidth < 768;
+                const maxSlides = isMobile ? testimonialSlides.length - 1 : Math.max(0, testimonialSlides.length - 3);
+                currentTestimonial = currentTestimonial <= 0 ? maxSlides : currentTestimonial - 1;
+                moveTestimonials();
+            });
+
+            // Inicializa o carrossel
+            moveTestimonials();
+
+            // Auto-play dos depoimentos
+            setInterval(() => {
+                const isMobile = window.innerWidth < 768;
+                const maxSlides = isMobile ? testimonialSlides.length - 1 : Math.max(0, testimonialSlides.length - 3);
+                currentTestimonial = currentTestimonial >= maxSlides ? 0 : currentTestimonial + 1;
+                moveTestimonials();
+            }, 4000);
+
+            // Reajusta o carrossel quando a tela é redimensionada
+            window.addEventListener('resize', moveTestimonials);
+        }
+
+        // Scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    if (document.getElementById(targetId)) {
+                        showSection(targetId);
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
